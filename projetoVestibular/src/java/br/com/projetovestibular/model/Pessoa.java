@@ -23,15 +23,12 @@ public class Pessoa {
     private String motivoPessoa;
     private Date dataFimPessoa;
     private String observacaoPessoa;
-    private Email email;
-    private Cep cep;
     private Cidade cidade;
-    private Telefone telefone;
 
     public Pessoa() {
     }
 
-    public Pessoa(Integer idPessoa, String nomePessoa, String cpfPessoa, String rgPessoa, String enderecoPessoa, String numeroEnderecoPessoa, String bairroEnderecoPessoa, String motivoPessoa, Date dataFimPessoa, String observacaoPessoa, Email email, Cep cep, Cidade cidade, Telefone telefone) {
+    public Pessoa(Integer idPessoa, String nomePessoa, String cpfPessoa, String rgPessoa, String enderecoPessoa, String numeroEnderecoPessoa, String bairroEnderecoPessoa, String motivoPessoa, Date dataFimPessoa, String observacaoPessoa, Cidade cidade) {
         this.idPessoa = idPessoa;
         this.nomePessoa = nomePessoa;
         this.cpfPessoa = cpfPessoa;
@@ -42,10 +39,7 @@ public class Pessoa {
         this.motivoPessoa = motivoPessoa;
         this.dataFimPessoa = dataFimPessoa;
         this.observacaoPessoa = observacaoPessoa;
-        this.email = email;
-        this.cep = cep;
         this.cidade = cidade;
-        this.telefone = telefone;
     }
 
     /**
@@ -189,34 +183,6 @@ public class Pessoa {
     }
 
     /**
-     * @return the email
-     */
-    public Email getEmail() {
-        return email;
-    }
-
-    /**
-     * @param email the email to set
-     */
-    public void setEmail(Email email) {
-        this.email = email;
-    }
-
-    /**
-     * @return the cep
-     */
-    public Cep getCep() {
-        return cep;
-    }
-
-    /**
-     * @param cep the cep to set
-     */
-    public void setCep(Cep cep) {
-        this.cep = cep;
-    }
-
-    /**
      * @return the cidade
      */
     public Cidade getCidade() {
@@ -229,20 +195,9 @@ public class Pessoa {
     public void setCidade(Cidade cidade) {
         this.cidade = cidade;
     }
+    
+    
 
-    /**
-     * @return the telefone
-     */
-    public Telefone getTelefone() {
-        return telefone;
-    }
-
-    /**
-     * @param telefone the telefone to set
-     */
-    public void setTelefone(Telefone telefone) {
-        this.telefone = telefone;
-    }
-
+   
     
 }

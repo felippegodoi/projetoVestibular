@@ -17,15 +17,17 @@ public class Telefone {
     private String numeroTelefone;
     private Date dataFimTelefone;
     private String motivoTelefone;
+    private Integer idPessoa;
 
     public Telefone() {
     }
 
-    public Telefone(Integer idTelefone, String numeroTelefone, Date dataFimTelefone, String motivoTelefone) {
+    public Telefone(Integer idTelefone, String numeroTelefone, Date dataFimTelefone, String motivoTelefone, Integer idPessoa) {
         this.idTelefone = idTelefone;
         this.numeroTelefone = numeroTelefone;
         this.dataFimTelefone = dataFimTelefone;
         this.motivoTelefone = motivoTelefone;
+        this.idPessoa = idPessoa;
     }
 
     /**
@@ -83,6 +85,22 @@ public class Telefone {
     public void setMotivoTelefone(String motivoTelefone) {
         this.motivoTelefone = motivoTelefone;
     }
+
+    /**
+     * @return the idPessoa
+     */
+    public Integer getIdPessoa() {
+        return idPessoa;
+    }
+
+    /**
+     * @param idPessoa the idPessoa to set
+     */
+    public void setIdPessoa(Integer idPessoa) {
+        this.idPessoa = idPessoa;
+    }
+
+   
     
     
 }

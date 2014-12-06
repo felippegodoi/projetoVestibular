@@ -97,23 +97,10 @@ public class CandidatoDAOImpl implements GenericDAO{
                 candidato.setMotivoPessoa(rs.getString("motivo_pessoa"));
                 candidato.setDataFimPessoa(rs.getDate("data_fim_pessoa"));
                 candidato.setObservacaoPessoa(rs.getString("observacao_pessoa"));
-                
-                email.setIdEmail(rs.getInt("id_email"));
-                email.setNomeEmail(rs.getString("nome_email"));
-                candidato.setEmail(email);
-                
-                cep.setIdCep(rs.getInt("id_cep"));
-                cep.setNomeCep(rs.getString("nome_cep"));
-                candidato.setCep(cep);
-                
                 cidade.setIdCidade(rs.getInt("id_cidade"));
                 cidade.setNomeCidade(rs.getString("nome_cidade"));
-               candidato.setCidade(cidade);
-                
-                telefone.setIdTelefone(rs.getInt("id_telefone"));
-                telefone.setNumeroTelefone(rs.getString("numero_telefone"));
-                candidato.setTelefone(telefone);
-                
+                candidato.setCidade(cidade);
+                                
                 resultado.add(candidato);
             }
     }catch(Exception ex){
@@ -172,9 +159,6 @@ public class CandidatoDAOImpl implements GenericDAO{
             rs = stmt.executeQuery();
             while (rs.next()) {
                 pessoa = new Pessoa();
-                email = new Email();
-                telefone = new Telefone();
-                cep = new Cep();
                 cidade = new Cidade();
                 candidato = new Candidato();
                 
@@ -188,22 +172,12 @@ public class CandidatoDAOImpl implements GenericDAO{
                 candidato.setMotivoPessoa(rs.getString("motivo_pessoa"));
                 candidato.setDataFimPessoa(rs.getDate("data_fim_pessoa"));
                 candidato.setObservacaoPessoa(rs.getString("observacao_pessoa"));
-                
-                email.setIdEmail(rs.getInt("id_email"));
-                email.setNomeEmail(rs.getString("nome_email"));
-                candidato.setEmail(email);
-                
-                cep.setIdCep(rs.getInt("id_cep"));
-                cep.setNomeCep(rs.getString("nome_cep"));
-                candidato.setCep(cep);
+        
                 
                 cidade.setIdCidade(rs.getInt("id_cidade"));
                 cidade.setNomeCidade(rs.getString("nome_cidade"));
                 candidato.setCidade(cidade);
-                
-                telefone.setIdTelefone(rs.getInt("id_telefone"));
-                telefone.setNumeroTelefone(rs.getString("numero_telefone"));
-                candidato.setTelefone(telefone);                               
+                                         
 
             }
         } catch (SQLException ex) {

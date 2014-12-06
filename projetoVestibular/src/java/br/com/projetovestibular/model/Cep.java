@@ -13,13 +13,15 @@ package br.com.projetovestibular.model;
 public class Cep {
     private Integer idCep;
     private String nomeCep;
+    private Integer idPessoa;
 
     public Cep() {
     }
 
-    public Cep(Integer idCep, String nomeCep) {
+    public Cep(Integer idCep, String nomeCep, Integer idPessoa) {
         this.idCep = idCep;
         this.nomeCep = nomeCep;
+        this.idPessoa = idPessoa;
     }
 
     /**
@@ -49,6 +51,22 @@ public class Cep {
     public void setNomeCep(String nomeCep) {
         this.nomeCep = nomeCep;
     }
+
+    /**
+     * @return the idPessoa
+     */
+    public Integer getIdPessoa() {
+        return idPessoa;
+    }
+
+    /**
+     * @param idPessoa the idPessoa to set
+     */
+    public void setIdPessoa(Integer idPessoa) {
+        this.idPessoa = idPessoa;
+    }
+
+   
     
     
 }

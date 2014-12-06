@@ -26,14 +26,13 @@ public class Candidato extends Pessoa{
         this.motivoCandidato = motivoCandidato;
     }
 
-    public Candidato(Integer idCandidato, String statusCandidato, String motivoCandidato, Integer idPessoa, String nomePessoa, String cpfPessoa, String rgPessoa, String enderecoPessoa, String numeroEnderecoPessoa, String bairroEnderecoPessoa, String motivoPessoa, Date dataFimPessoa, String observacaoPessoa, Email email, Cep cep, Cidade cidade, Telefone telefone) {
-        super(idPessoa, nomePessoa, cpfPessoa, rgPessoa, enderecoPessoa, numeroEnderecoPessoa, bairroEnderecoPessoa, motivoPessoa, dataFimPessoa, observacaoPessoa, email, cep, cidade, telefone);
+    public Candidato(Integer idCandidato, String statusCandidato, String motivoCandidato, Integer idPessoa, String nomePessoa, String cpfPessoa, String rgPessoa, String enderecoPessoa, String numeroEnderecoPessoa, String bairroEnderecoPessoa, String motivoPessoa, Date dataFimPessoa, String observacaoPessoa, Cidade cidade) {
+        super(idPessoa, nomePessoa, cpfPessoa, rgPessoa, enderecoPessoa, numeroEnderecoPessoa, bairroEnderecoPessoa, motivoPessoa, dataFimPessoa, observacaoPessoa, cidade);
         this.idCandidato = idCandidato;
         this.statusCandidato = statusCandidato;
         this.motivoCandidato = motivoCandidato;
     }
-
-    
+   
 
     /**
      * @return the idCandidato

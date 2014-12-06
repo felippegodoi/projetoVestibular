@@ -30,14 +30,16 @@ public class Funcionario extends Pessoa{
         this.cargo = cargo;
     }
 
-    public Funcionario(Integer idFuncionario, String matriculaFuncionario, String loginFuncionario, String senhaFuncionario, Cargo cargo, Integer idPessoa, String nomePessoa, String cpfPessoa, String rgPessoa, String enderecoPessoa, String numeroEnderecoPessoa, String bairroEnderecoPessoa, String motivoPessoa, Date dataFimPessoa, String observacaoPessoa, Email email, Cep cep, Cidade cidade, Telefone telefone) {
-        super(idPessoa, nomePessoa, cpfPessoa, rgPessoa, enderecoPessoa, numeroEnderecoPessoa, bairroEnderecoPessoa, motivoPessoa, dataFimPessoa, observacaoPessoa, email, cep, cidade, telefone);
+    public Funcionario(Integer idFuncionario, String matriculaFuncionario, String loginFuncionario, String senhaFuncionario, Cargo cargo, Integer idPessoa, String nomePessoa, String cpfPessoa, String rgPessoa, String enderecoPessoa, String numeroEnderecoPessoa, String bairroEnderecoPessoa, String motivoPessoa, Date dataFimPessoa, String observacaoPessoa, Cidade cidade) {
+        super(idPessoa, nomePessoa, cpfPessoa, rgPessoa, enderecoPessoa, numeroEnderecoPessoa, bairroEnderecoPessoa, motivoPessoa, dataFimPessoa, observacaoPessoa, cidade);
         this.idFuncionario = idFuncionario;
         this.matriculaFuncionario = matriculaFuncionario;
         this.loginFuncionario = loginFuncionario;
         this.senhaFuncionario = senhaFuncionario;
         this.cargo = cargo;
     }
+
+  
 
     /**
      * @return the idFuncionario

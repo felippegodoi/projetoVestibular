@@ -41,8 +41,8 @@ public class PessoaDAOImpl {
         Integer idPessoa = null;
         String sql = "INSERT INTO pessoa(nome_pessoa, cpf_pessoa, rg_pessoa, endereco_pessoa,"
                 + "numero_endereco_pessoa, bairro_endereco_pessoa, motivo_pessoa,data_fim_pessoa,"
-                + "observacao_pessoa, id_email, id_cep, id_cidade,id_telefone)VALUES (?, ?, ?, ?, ?,?, ?, ?,"
-                + "?, ?, ?, ?, ?,?) returning id_pessoa;";
+                + "observacao_pessoa,id_cidade,id_telefone)VALUES (?, ?, ?, ?, ?,?, ?, ?,"
+                + "?, ?, ?, ?) returning id_pessoa;";
         try{
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, pessoa.getNomePessoa());
@@ -54,11 +54,8 @@ public class PessoaDAOImpl {
             stmt.setString(7, pessoa.getMotivoPessoa());
             stmt.setDate(8, new java.sql.Date(pessoa.getDataFimPessoa().getTime()));
             stmt.setString(9, pessoa.getObservacaoPessoa());
-            stmt.setString(10, pessoa.getEmail().getNomeEmail());
-            stmt.setInt(11, pessoa.getCep().getIdCep());
-            stmt.setInt(12, pessoa.getCidade().getIdCidade());
-            stmt.setString(13, pessoa.getTelefone().getNumeroTelefone());
-            
+            stmt.setInt(10, pessoa.getCidade().getIdCidade());
+                       
             
             rs = stmt.executeQuery();
             while(rs.next()){
@@ -102,23 +99,11 @@ public class PessoaDAOImpl {
                 pessoa.setBairroEnderecoPessoa(rs.getString("bairro_endereco_pessoa"));
                 pessoa.setMotivoPessoa(rs.getString("motivo_pessoa"));
                 pessoa.setDataFimPessoa(rs.getDate("data_fim_pessoa"));
-                pessoa.setObservacaoPessoa(rs.getString("observacao_pessoa"));
-                
-                email.setIdEmail(rs.getInt("id_email"));
-                email.setNomeEmail(rs.getString("nome_email"));
-                pessoa.setEmail(email);
-                
-                cep.setIdCep(rs.getInt("id_cep"));
-                cep.setNomeCep(rs.getString("nome_cep"));
-                pessoa.setCep(cep);
+                pessoa.setObservacaoPessoa(rs.getString("observacao_pessoa"));              
                 
                 cidade.setIdCidade(rs.getInt("id_cidade"));
                 cidade.setNomeCidade(rs.getString("nome_cidade"));
                 pessoa.setCidade(cidade);
-                
-                telefone.setIdTelefone(rs.getInt("id_telefone"));
-                telefone.setNumeroTelefone(rs.getString("numero_telefone"));
-                pessoa.setTelefone(telefone);
                 
                 resultado.add(pessoa);
             }
@@ -154,11 +139,8 @@ public class PessoaDAOImpl {
             stmt.setString(6, pessoa.getBairroEnderecoPessoa());
             stmt.setString(7, pessoa.getMotivoPessoa());
             stmt.setDate(8, new java.sql.Date(pessoa.getDataFimPessoa().getTime()));
-            stmt.setString(9, pessoa.getObservacaoPessoa());
-            stmt.setString(10, pessoa.getEmail().getNomeEmail());
-            stmt.setInt(11, pessoa.getCep().getIdCep());
-            stmt.setInt(12, pessoa.getCidade().getIdCidade());
-            stmt.setString(13, pessoa.getTelefone().getNumeroTelefone());
+            stmt.setString(9, pessoa.getObservacaoPessoa());     
+            stmt.setInt(10, pessoa.getCidade().getIdCidade());
             stmt.executeUpdate();
             return true;
         }catch (SQLException ex){
