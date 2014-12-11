@@ -17,18 +17,18 @@ public class Email {
     private String nomeEmail;
     private Date dataFimEmail;
     private String motivoEmail;
-    private Integer idPessoa;
+    private Pessoa pessoa;
    
 
     public Email() {
     }
 
-    public Email(Integer idEmail, String nomeEmail, Date dataFimEmail, String motivoEmail, Integer idPessoa) {
+    public Email(Integer idEmail, String nomeEmail, Date dataFimEmail, String motivoEmail, Pessoa pessoa) {
         this.idEmail = idEmail;
         this.nomeEmail = nomeEmail;
         this.dataFimEmail = dataFimEmail;
         this.motivoEmail = motivoEmail;
-        this.idPessoa = idPessoa;
+        this.pessoa = pessoa;
     }
 
     /**
@@ -88,22 +88,17 @@ public class Email {
     }
 
     /**
-     * @return the idPessoa
+     * @return the pessoa
      */
-    public Integer getIdPessoa() {
-        return idPessoa;
+    public Pessoa getPessoa() {
+        return pessoa;
     }
 
     /**
-     * @param idPessoa the idPessoa to set
+     * @param pessoa the pessoa to set
      */
-    public void setIdPessoa(Integer idPessoa) {
-        this.idPessoa = idPessoa;
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
     }
-
-    
-
-    
-    
     
 }
