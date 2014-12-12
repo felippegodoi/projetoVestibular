@@ -48,7 +48,7 @@ public class CadastrarCargo extends HttpServlet {
             }
             
             request.setAttribute("mensagem", mensagem);
-            request.getRequestDispatcher("CadastrarCargo.jsp").forward(request, response);
+            request.getRequestDispatcher("cadastrarcargo.jsp").forward(request, response);
         }catch(Exception ex){
             System.out.println("Problemas na Controller ao cadastrar Cargo! Erro: "+ ex.getMessage());
             ex.printStackTrace();
